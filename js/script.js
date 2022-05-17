@@ -1,13 +1,19 @@
+//Agents names:
+
+const agent1 = "Carlos";
+const agent2 = "Camilo";
+const agent3 = "Alicia";
+
 //Constants definition:
 
 const contractsLimit = 3;
 
-//Variable definition:
+//MESSAGES:
 
-let baseFare;
-let kilometersFactor;
+//Company messages:
 
-let titleMessage = "CALCULADORA DE TARIFAS RENT A CAR";
+let titleMessage = "CALCULADORA DE TARIFAS RENT A CAR\n\n";
+let billHeaderMessage = "RENT-A-CAR\n" + "NIT 830.141.901-7\n\n";
 
 //Number of contracts messages
 
@@ -40,26 +46,115 @@ let distanceMessage =
 let distanceErrorMessage =
 	"ENTRADA INVÁLIDA, por favor escribe un número, que además sea mayor que cero.";
 
+// 
+
+let confirmationMessage = "Por favor confirma la información de este contrato para cargarlo a la factura.\n\n"
+
+//Header printing function:
+
+function header(agent) {
+	console.log(billHeaderMessage);
+	console.log("Elaborado por: " + agent + "\n\n");
+}
+
+//Agent name capture function:
+
+function validName() {
+	let invalid = true;
+	do {
+		let name = prompt(titleMessage + "Ingresa tu nombre: ").toLowerCase();
+		switch (name) {
+			case agent1.toLowerCase():
+				alert(titleMessage + "Bienvenido " + agent1 + "!");
+				invalid = false;
+				return agent1;
+			case agent2.toLowerCase():
+				alert(titleMessage + "Bienvenido " + agent2 + "!");
+				invalid = false;
+				return agent2;
+			case agent3.toLowerCase():
+				alert(titleMessage + "Bienvenida " + agent3 + "!");
+				invalid = false;
+				return agent3;
+			default:
+				alert(
+					"El nombre proporcionado no está registrado! Por favor ingresa un nombre válido."
+				);
+		}
+	} while (invalid);
+}
+
+//Alert contract confirmation message function:
+
+function confirmContract(vehicleCode, distance, pickUpService, totalAmount) {
+	let contractSummary = "Tipo de vehículo:                  ";
+	switch (parseInt(vehicleCode)) {
+		case 1:
+			contractSummary += "Motocicleta\n";
+			break;
+		case 2:
+			contractSummary += "Automóvil\n";
+			break;
+		case 3:
+			contractSummary += "Camioneta\n";
+			break;
+		case 4:
+			contractSummary += "Furgón\n";
+			break;
+		case 5:
+			contractSummary += "Camión\n";
+			break;
+	} 
+	contractSummary += "Distancia recorrida (km):      " + distance + "\n";
+	contractSummary += "Servicio de recogida:            "
+	if (pickUpService) {
+		contractSummary += "Si\n";
+	} else {
+		contractSummary += "No\n";
+	}
+	contractSummary += "Costo del alquiler (USD):      " + totalAmount;
+
+	return confirm(titleMessage + confirmationMessage + contractSummary);
+}
+
+//Round function:
+
+function roundNumber(number, decimals){
+    let power = 1;
+    for (let i = 0; i < decimals; i++) {
+        power *= 10;
+    }
+    number *= power;
+    number = parseInt(number);
+    return number = number / power;
+}
+
+//Variable definition:
+
+let baseFare;
+let kilometersFactor;
+
 //MAIN CODE:
 
-let numberOfContracts = prompt(titleMessage + "\n\n" + contractsMessage);
+let agent = validName();
+header(agent);
+
+let numberOfContracts = prompt(titleMessage + contractsMessage);
 
 while (
 	isNaN(numberOfContracts) ||
-	numberOfContracts == "" ||
 	numberOfContracts < 1 ||
 	numberOfContracts > contractsLimit
 ) {
 	if (
 		isNaN(numberOfContracts) ||
-		numberOfContracts == "" ||
 		numberOfContracts < 1
 	) {
 		numberOfContracts = prompt(
-			titleMessage + "\n\n" + contractsInvalidInput + "\n" + contractsMessage
+			titleMessage + contractsInvalidInput + "\n" + contractsMessage
 		);
 	} else {
-		alert(titleMessage + "\n\n" + exceededMessage);
+		alert(titleMessage + exceededMessage);
 		numberOfContracts = 0;
 		break;
 	}
@@ -70,8 +165,10 @@ console.log(serviceBill);
 
 let totalBill = 0;
 
-for (let i = 0; i < numberOfContracts; i++) {
-	let vehicleKind = prompt(titleMessage + "\n\n" + optionsMessage);
+let contractCounter = 0;
+
+while (contractCounter < numberOfContracts) {
+	let vehicleKind = prompt(titleMessage + optionsMessage);
 
 	while (
 		isNaN(vehicleKind) ||
@@ -110,15 +207,17 @@ for (let i = 0; i < numberOfContracts; i++) {
 			break;
 	}
 
-	let kilometers = prompt(titleMessage + "\n\n" + distanceMessage);
+	let kilometers = prompt(titleMessage + distanceMessage);
 
 	while (isNaN(kilometers) || kilometers == "" || kilometers < 0) {
 		kilometers = prompt(distanceErrorMessage + "\n\n" + distanceMessage);
 	}
 
+	kilometers = roundNumber(kilometers, 2);
+
 	serviceBill = serviceBill + kilometers + "\t\t\t\t";
 
-	let pickUp = confirm("¿El cliente solicitó la recogida del vehículo?");
+	let pickUp = confirm(titleMessage + "¿El cliente solicitó la recogida del vehículo?");
 
 	let rentCost = baseFare + parseInt(kilometers) * kilometersFactor;
 
@@ -129,11 +228,17 @@ for (let i = 0; i < numberOfContracts; i++) {
 		serviceBill = serviceBill + "No" + "\t\t\t";
 	}
 
+	rentCost = roundNumber(rentCost, 2);
 	serviceBill = serviceBill + rentCost + "\n";
 
-	totalBill += rentCost;
+	let checkInfo = confirmContract(vehicleKind, kilometers, pickUp, rentCost);
 
-	console.log(serviceBill);
+	if (checkInfo) {
+		totalBill += rentCost;
+		console.log(serviceBill);
+		contractCounter++;
+	}
+	
 }
 
 console.log("\nVALOR TOTAL DE LA FACTURA\t\t\t\t\t" + totalBill);
