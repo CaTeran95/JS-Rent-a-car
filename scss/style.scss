@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    header {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        font-size: 1.75rem;
+    }
+
+    form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: aqua;
+        font-size: 1.5rem;
+
+        #kindOfCarOptions {
+            margin: 2rem;
+            font-size: 1.5rem;
+        }
+
+        #distance {
+            margin: 0 2rem;
+            font-size: 1.5rem;
+            width: 50%;
+            display: inline-block;
+        }
+    }
+}

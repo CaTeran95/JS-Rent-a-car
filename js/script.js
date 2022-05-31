@@ -62,68 +62,49 @@ function contractBillLine(contract) {
 	return line;
 }
 
+function yesNo (statement) {
+	if(statement) { 
+		return "Si";
+	} else { 
+		return "No"; 
+	}
+}
+
 //MAIN CODE:
 
 let bill = new Array;
 
 function newContract() {
+	
 	// Getting information from the form:
 	let kindOfVehicle = document.querySelector("#kindOfCarOptions").value;
 	let distance = document.querySelector("#distance").value;
 	let pickUpCheckBox = document.querySelector("#pickUp");
+	
 	// Pick up validation:
 	let pickUp = false;
 	if(pickUpCheckBox.checked){
 		pickUp = true;
 	}
+	
 	// Form reset:
 	document.querySelector("form").reset();
+	
 	// New object Contract with the provided input:
 	let serviceContract = new Contract(kindOfVehicle, distance, pickUp);
+	
 	// Creating the bill for this session:
 	bill.push(serviceContract);
+
+	console.log(serviceContract);
+
+	// Appending the table entry:
+	let table = document.querySelector("table");
+	let contractLine = document.createElement("tr");
+	contractLine.innerHTML = 
+		`<td>${serviceContract.vehicleKind[1]}</td>
+		<td>${serviceContract.distance}</td>
+		<td>${yesNo(serviceContract.pickUp)}</td>
+		<td>${serviceContract.cost}</td>`;
+	table.appendChild(contractLine);
 }
-
-// let useCalculator = true;
-
-// do {
-// 	let agent = signIn();
-// 	if (agent) {
-// 		header(agent);
-// 		let bill = [];
-// 		let numberOfContracts = validateNaturalInput(
-// 			contractsMessage,
-// 			contractsLimit
-// 		);
-// 		let serviceBill =
-// 			"Vehículo\t\tKilómetros\t\tRecargo\t\tValor total (USD)\n\n";
-// 		console.log(serviceBill);
-// 		let contractCounter = 0;
-// 		while (contractCounter < numberOfContracts) {
-// 			let vehicleKindCode = validateNaturalInput(optionsMessage, 5);
-// 			let distance = validateFloatInput(distanceMessage);
-// 			let pickUp = confirm(titleMessage + pickUpMessage);
-// 			let serviceContract = new Contract(vehicleKindCode, distance, pickUp);
-// 			if (confirmContract(serviceContract)) {
-// 				bill.push(serviceContract);
-// 				console.log(contractBillLine(serviceContract));
-// 				contractCounter++;
-// 			} else {
-// 				alert(titleMessage + discardContract);
-// 				contracts--;
-// 			}
-// 		}
-// 		let totalBill = 0;
-// 		for (const contract of bill) {
-// 			totalBill += contract.cost;
-// 		}
-// 		console.log(
-// 			"\nVALOR TOTAL DE LA FACTURA\t\t\t\t\t" + roundNumber(totalBill, 2)
-// 		);
-// 		useCalculator = false;
-// 	} else {
-// 		useCalculator = confirm(stayMessage);
-// 	}
-// } while (useCalculator);
-
-// alert(endMessage);

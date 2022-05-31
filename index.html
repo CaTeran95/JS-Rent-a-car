@@ -8,6 +8,13 @@
     <title>Rent-a-Car</title>
 </head>
 <body>
+    <header>
+        <h1>RENT-A-CAR</h1>
+        <p>NIT 830.141.901-7</p>
+        <p>Bogotá, Colombia</p>
+        <p>(60) 1 703 2017 - (+57) 319 425 6032</p>
+    </header>
+
     <form action="">
 
         <select id="kindOfCarOptions" name="kindOfVehicle">
@@ -19,23 +26,37 @@
             <option value="Camión">(5) Camión</option>
         </datalist>
 
-        <input type="text" id="distance" name="distance" placeholder="Distancia recorrida" required> km
+        <div class="distance">
+            <input type="text" id="distance" name="distance" placeholder="Distancia recorrida" required>
+            <label for="distance">km</label>
+        </div>
 
         <input type="checkbox" id="pickUp" name="pickUp"> ¿El cliente solicitó la recogida del vehículo?
 
-        <input type="button" value="Enviar" onclick="newContract()">
-
-        <!-- Constants and functions link -->
-        <script src="./js/Messages.js"></script>
-        <script src="./js/Functions.js"></script>
-        <!-- Classes link -->
-        <script src="./js/Person.js"></script>
-        <script src="./js/Contract.js"></script>
+        <input type="button" id="submit" value="Enviar" onclick="newContract()">
         
-        <script src="./js/Staff.js"></script>
-        <script src="./js/SignIn.js"></script>
-        <script src="./js/script.js"></script>
-
     </form>
+
+    <table cellspacing="20px">
+        <tr>
+            <th>Vehículo</th>
+            <th>Distancia, km</th>
+            <th>Recogida</th>
+            <th>Precio, USD</th>
+        </tr>
+
+    </table>
+
+    <!-- Constants and functions link -->
+    <script src="./js/Messages.js"></script>
+    <script src="./js/Functions.js"></script>
+    <!-- Classes link -->
+    <script src="./js/Person.js"></script>
+    <script src="./js/Contract.js"></script>
+    
+    <script src="./js/Staff.js"></script>
+    <script src="./js/SignIn.js"></script>
+    <script src="./js/script.js"></script>
+
 </body>
 </html>
