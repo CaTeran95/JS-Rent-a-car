@@ -16,20 +16,20 @@ class Contract {
 	}
 
 	setVehicleKind(selectionCode) {
-		switch (parseInt(selectionCode)) {
-			case 1:
+		switch (selectionCode) {
+			case "Motocicleta":
 				this.vehicleKind = [1, "Motocicleta", 10, 0.5];
 				break;
-			case 2:
+			case "Automóvil":
 				this.vehicleKind = [2, "Automóvil", 30, 1.2];
 				break;
-			case 3:
+			case "Camioneta":
 				this.vehicleKind = [3, "Camioneta", 45, 1.35];
 				break;
-			case 4:
+			case "Furgón":
 				this.vehicleKind = [4, "Furgón", 80, 1];
 				break;
-			case 5:
+			case "Camión":
 				this.vehicleKind = [5, "Camión", 120, 1.5];
 				break;
 		}

@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent a car</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Rent-a-Car</title>
 </head>
 <body>
-    <h1>RENT A CAR</h1>
+    <form action="">
 
-    <h2>Calculadora de tarifas para renta de vehículos</h2>
+        <select id="kindOfCarOptions" name="kindOfVehicle">
+            <option value="" selected></option>
+            <option value="Motocicleta">(1) Motocicleta</option>
+            <option value="Automóvil">(2) Automóvil</option>
+            <option value="Camioneta">(3) Camioneta</option>
+            <option value="Furgón">(4) Furgón</option>
+            <option value="Camión">(5) Camión</option>
+        </datalist>
 
-    <p>Verifica tu registro en la plataforma con tu supervisor. Debes introducir tu nombre tal como aparece en tu identificación.</p>
+        <input type="text" id="distance" name="distance" placeholder="Distancia recorrida" required> km
 
-    <ol>
-        <li>Selecciona el número de contratos de alquiler que deseas facturar (Consulta con el administrador el número máximo)</li>
-        <li>Selecciona el tipo de vehículo al que corresponde cada contrato</li>
-        <li>Ingresa la cantidad de kilómetros recorridos</li>
-        <li>Especifica si el usuario acordó la recogida del vehículo.</li>
-        <li>Confirma la información. Si no corresponde al contrato, cancela y vuelve a introducir.</li>
-    </ol>
+        <input type="checkbox" id="pickUp" name="pickUp"> ¿El cliente solicitó la recogida del vehículo?
 
-    <p>Realiza el mismo procedimiento para cada contrato. Consulta la factura al final en la consola del inspector.</p>
-    
-    <!-- Constants and functions link -->
-    <script src="./js/Messages.js"></script>
-    <script src="./js/Functions.js"></script>
-    <!-- Classes link -->
-    <script src="./js/Person.js"></script>
-    <script src="./js/Contract.js"></script>
-    
-    <script src="./js/Staff.js"></script>
-    <script src="./js/SignIn.js"></script>
-    <script src="./js/script.js"></script>
+        <input type="button" value="Enviar" onclick="newContract()">
+
+        <!-- Constants and functions link -->
+        <script src="./js/Messages.js"></script>
+        <script src="./js/Functions.js"></script>
+        <!-- Classes link -->
+        <script src="./js/Person.js"></script>
+        <script src="./js/Contract.js"></script>
+        
+        <script src="./js/Staff.js"></script>
+        <script src="./js/SignIn.js"></script>
+        <script src="./js/script.js"></script>
+
+    </form>
 </body>
 </html>
