@@ -5,7 +5,7 @@
           box-sizing: border-box;
 }
 
-body {
+#loginPage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,7 +15,11 @@ body {
           flex-direction: column;
 }
 
-body header {
+#loginPage #loginForm {
+  margin: 20vh auto;
+  padding: 1.5rem 3rem;
+  background-color: #2244cc;
+  border-radius: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,14 +27,209 @@ body header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
   gap: 1rem;
-  margin-bottom: 2rem;
-  font-size: 1.75rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
 }
 
-body #form {
-  margin: auto;
+#loginPage #loginForm div {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+}
+
+#loginPage #loginForm div label {
+  width: 180px;
+  font-size: 1.5rem;
+}
+
+#loginPage #loginForm #loginMessage p {
+  margin: 0 auto;
+}
+
+#loginPage #loginForm #submit {
+  margin-top: 1rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5;
+  border: none;
+  border-radius: 1rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#loginPage #loginForm #submit:hover {
+  background-color: #7799ff;
+}
+
+#mainPage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10vh 90vh;
+      grid-template-rows: 10vh 90vh;
+  -ms-grid-columns: 15rem auto;
+      grid-template-columns: 15rem auto;
+      grid-template-areas: "header_ header_" "menu_ section_";
+}
+
+#mainPage header {
+  padding: 1rem;
+  color: #fff;
+  background-color: #2244cc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header_;
+}
+
+#mainPage header h1, #mainPage header p {
+  text-align: center;
+}
+
+#mainPage header h1 {
+  width: 90%;
+}
+
+#mainPage header p {
+  width: 10%;
+}
+
+#mainPage nav {
+  color: #fff;
+  background-color: #6688ff;
+  font-size: 1.6rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: menu_;
+}
+
+#mainPage nav ul {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+}
+
+#mainPage nav ul li {
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+#mainPage nav ul li:hover {
+  background-color: #3366dd;
+  font-weight: 900;
+}
+
+#mainPage .personnel {
+  padding: 3rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: section_;
+}
+
+#mainPage .personnel h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#mainPage .personnel button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 10%;
+}
+
+#mainPage .personnel table {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-collapse: collapse;
+  font-size: 1.25rem;
+}
+
+#mainPage .personnel table .centered {
+  text-align: center;
+}
+
+#mainPage .personnel table .left-aligned {
+  text-align: end;
+}
+
+#mainPage .personnel table #tableHeader #Sel {
+  width: 30px;
+}
+
+#mainPage .personnel table #tableHeader #Name {
+  width: 250px;
+}
+
+#mainPage .personnel table #tableHeader #ID {
+  width: 150px;
+}
+
+#mainPage .personnel table #tableHeader #Role {
+  width: 150px;
+}
+
+#mainPage .personnel table #tableHeader #State {
+  width: 100px;
+}
+
+#mainPage .personnel table #tableHeader th {
+  width: 300px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #2244cc;
+}
+
+#mainPage .personnel table td {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
+
+#mainPage .contracts {
+  display: none;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: section_;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#mainPage .contracts #form {
+  margin: 2rem;
   padding: 2rem;
   border-radius: 1.5rem;
   display: -webkit-box;
@@ -44,11 +243,12 @@ body #form {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
-  background-color: #66be1e;
+  color: #fff;
+  background-color: #2244cc;
   font-size: 1.5rem;
 }
 
-body #form #kindOfVehicle, body #form .distance input {
+#mainPage .contracts #form #kindOfVehicle, #mainPage .contracts #form .distance input {
   height: 2.5rem;
   padding: 0 1rem;
   font-size: 1.5rem;
@@ -56,7 +256,7 @@ body #form #kindOfVehicle, body #form .distance input {
   border-radius: 1.5rem;
 }
 
-body #form div {
+#mainPage .contracts #form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,20 +270,20 @@ body #form div {
   gap: 1rem;
 }
 
-body #form .distance {
+#mainPage .contracts #form .distance {
   font-size: 1.5rem;
 }
 
-body #form .distance input {
+#mainPage .contracts #form .distance input {
   width: 15rem;
 }
 
-body #form #pickUp {
+#mainPage .contracts #form #pickUp {
   height: 1.5rem;
   width: 1.5rem;
 }
 
-body #form #submit {
+#mainPage .contracts #form #submit {
   width: 30%;
   font-size: 1.5rem;
   -ms-flex-item-align: center;
@@ -91,30 +291,31 @@ body #form #submit {
       align-self: center;
 }
 
-body table, body tr {
+#mainPage .contracts table, #mainPage .contracts tr {
   margin: 2rem auto;
   font-size: 1.5rem;
   border-bottom: 1px solid #000;
   border-collapse: collapse;
 }
 
-body table th, body table td, body tr th, body tr td {
+#mainPage .contracts table th, #mainPage .contracts table td, #mainPage .contracts tr th, #mainPage .contracts tr td {
   padding: 1rem;
 }
 
-body table th, body tr th {
-  background-color: #66be1e;
+#mainPage .contracts table th, #mainPage .contracts tr th {
+  color: #fff;
+  background-color: #2244cc;
 }
 
-body table .centered, body tr .centered {
+#mainPage .contracts table .centered, #mainPage .contracts tr .centered {
   text-align: center;
 }
 
-body table .rightAlign, body tr .rightAlign {
+#mainPage .contracts table .rightAlign, #mainPage .contracts tr .rightAlign {
   text-align: right;
 }
 
-body .buttonsSection {
+#mainPage .contracts .buttonsSection {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,7 +327,7 @@ body .buttonsSection {
   gap: 1rem;
 }
 
-body #contractSum, body #clearBill {
+#mainPage .contracts #contractSum, #mainPage .contracts #clearBill {
   height: 2.5rem;
   padding: 0 1rem;
   -ms-flex-item-align: center;
@@ -137,7 +338,7 @@ body #contractSum, body #clearBill {
   border-radius: 1rem;
 }
 
-body #clearBill {
+#mainPage .contracts #clearBill {
   background-color: #d22;
   color: #fff;
 }

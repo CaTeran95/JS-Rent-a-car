@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT-A-CAR | Página principal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="mainPage">
+    <header>
+        <h1>RENT-A-CAR</h1>
+        <p id="userName"></p>
+    </header>
+    <nav>
+        <ul>
+            <li class="navOption" id="Personnel">Personal</li>
+            <li class="navOption" id="Clients">Clientes</li>
+            <li class="navOption" id="Vehicles">Vehículos</li>
+            <li class="navOption" id="Bookings">Reservas</li>
+            <li class="navOption" id="Contracts">Contratos</li>
+        </ul>
+    </nav>
+    <section class="personnel">
+        <h2>Administración de usuarios</h2>
+        <button onclick="deleteSelected()">Eliminar</button>
+        <table>
+        </table>
+    </section>
+
+    <section class="contracts">
+        <form id="form">
+            <select name="kindOfVehicle" id="kindOfVehicle">
+                <option value="" disabled selected>Selecciona el tipo de vehículo</option>
+                    <option value="Motocicleta">(1) Motocicleta</option>
+                    <option value="Automóvil">(2) Automóvil</option>
+                    <option value="Camioneta">(3) Camioneta</option>
+                    <option value="Furgón">(4) Furgón</option>
+                    <option value="Camión">(5) Camión</option>
+            </select>
+            <div class="distance">
+                <input type="text" id="distance" name="distance" placeholder="Distancia recorrida" required>
+                <label for="distance">km</label>
+            </div>
+            <div class="pickUp">
+                <input type="checkbox" id="pickUp" name="distance" placeholder="Distancia recorrida">
+                <label for="distance">¿El cliente solicitó la recogida del vehículo?</label>
+            </div>
+            <input type="button" id="submit" value="Enviar" onclick="newContract()">
+        </form>    
+    
+        <table id="contractTable">
+            <tr>
+                <th>Vehículo</th>
+                <th>Distancia, km</th>
+                <th>Recogida</th>
+                <th>Precio, USD</th>
+            </tr>
+            <tr id="totalBill">
+    
+            </tr>
+    
+        </table>    
+        
+        <div class="buttonsSection">
+            <input type="button" value="Limpiar lista de contratos" id="clearBill">
+            <input type="button" value="Totalizar los contratos" id="contractSum">
+        </div>
+    </section>  
+    
+    <!-- Constants and functions link -->
+    <script src="../js/Messages.js"></script>
+    <script src="../js/Functions.js"></script>
+    <!-- Classes link -->
+    <script src="../js/Person.js"></script>
+    <script src="../js/Employee.js"></script>
+    <script src="../js/Contract.js"></script>
+    
+    <script src="../js/Staff.js"></script>
+    <script src="../js/SignIn.js"></script>
+    <script src="../js/mainPage.js"></script>
+    <script src="../js/script.js"></script>
+    
+</body>
+</html>
