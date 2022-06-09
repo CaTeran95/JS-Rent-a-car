@@ -5,64 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Rent-a-Car</title>
+    <title>RENT-A-CAR | Login</title>
 </head>
-<body>
-    <header>
-        <h1>RENT-A-CAR</h1>
-        <p>NIT 830.141.901-7</p>
-        <p>Bogotá, Colombia</p>
-        <p>(60) 1 703 2017 - (+57) 319 425 6032</p>
-    </header>
-
-    <form id="form">
-        <select name="kindOfVehicle" id="kindOfVehicle">
-            <option value="" disabled selected>Selecciona el tipo de vehículo</option>
-                <option value="Motocicleta">(1) Motocicleta</option>
-                <option value="Automóvil">(2) Automóvil</option>
-                <option value="Camioneta">(3) Camioneta</option>
-                <option value="Furgón">(4) Furgón</option>
-                <option value="Camión">(5) Camión</option>
-        </select>
-        <div class="distance">
-            <input type="text" id="distance" name="distance" placeholder="Distancia recorrida" required>
-            <label for="distance">km</label>
+<body id="loginPage">
+    <form action="" id="loginForm">
+        <div id="loginMessage"></div>
+        <div class="userField">
+            <label for="userField">Usuario o ID</label>
+            <input type="text" name="userField" id="userField" required>
         </div>
-        <div class="pickUp">
-            <input type="checkbox" id="pickUp" name="distance" placeholder="Distancia recorrida">
-            <label for="distance">¿El cliente solicitó la recogida del vehículo?</label>
+        <div class="passwordField">
+            <label for="passwordField">Contraseña</label>
+            <input type="password" name="passwordField" id="passwordField" required>
         </div>
-        <input type="button" id="submit" value="Enviar" onclick="newContract()">
-    </form>    
+        <button type="button" id="submit">Ingresar</button>
+    </form>
 
-    <table>
-        <tr>
-            <th>Vehículo</th>
-            <th>Distancia, km</th>
-            <th>Recogida</th>
-            <th>Precio, USD</th>
-        </tr>
-        <tr id="totalBill">
-
-        </tr>
-
-    </table>    
-    
-    <div class="buttonsSection">
-        <input type="button" value="Limpiar lista de contratos" id="clearBill">
-        <input type="button" value="Totalizar los contratos" id="contractSum">
-    </div>
-
-    <!-- Constants and functions link -->
-    <script src="./js/Messages.js"></script>
-    <script src="./js/Functions.js"></script>
-    <!-- Classes link -->
     <script src="./js/Person.js"></script>
-    <script src="./js/Contract.js"></script>
-    
+    <script src="./js/Employee.js"></script>
     <script src="./js/Staff.js"></script>
-    <script src="./js/SignIn.js"></script>
-    <script src="./js/script.js"></script>
-
+    <script src="./js/login.js"></script>
 </body>
 </html>
