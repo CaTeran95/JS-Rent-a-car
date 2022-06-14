@@ -4,10 +4,10 @@ function login() {
     let pass = document.querySelector("#passwordField").value;
     let message = document.querySelector("#loginMessage");
     
-    for (const employee of staff) {
-        if (employee.user == user || employee.id == parseInt(user)) {
-            if (employee.password == pass) {
-                sessionStorage.setItem('user', employee.name);
+    for (const {name, user, id, password} of staff) {
+        if (user == user || id == parseInt(user)) {
+            if (password == pass) {
+                sessionStorage.setItem('user', name);
                 window.location = "/pages/mainPage.html";
             }
         }

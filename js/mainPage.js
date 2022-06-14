@@ -6,6 +6,8 @@ userMenu.innerText = `${userName}`;
 
 let staffTable = document.querySelector(".personnel table");
 
+function formattedID(id) { return id.toLocaleString('en-US'); }
+
 function rechargeTable() {
     staffTable.innerHTML = `
     <tr id="tableHeader">
@@ -15,15 +17,15 @@ function rechargeTable() {
         <th id="Role">Rol</th>        
         <th id="State">Estado</th>
     </tr>`;
-	for (const employee of staff) {
+	for (const {name, id, role, state} of staff) {
 		let newEmployee = document.createElement("tr");
-		newEmployee.id = employee.id;
+		newEmployee.id = id;
 		newEmployee.innerHTML = `
-            <td class="centered"><input type="checkbox" name="" id="${employee.id}"></td>
-            <td>${employee.name}</td>
-            <td class="left-aligned">${employee.id}</td>
-            <td class="centered">${employee.role}</td>
-            <td class="centered">${employee.state}</td>`;
+            <td class="centered"><input type="checkbox" name="" id="${id}"></td>
+            <td>${name}</td>
+            <td class="left-aligned">${formattedID(id)}</td>
+            <td class="centered">${role}</td>
+            <td class="centered">${state}</td>`;
 		staffTable.appendChild(newEmployee);
 	}
 }

@@ -6,11 +6,7 @@ function stringToNumber(string) {
 }
 
 function yesNo(statement) {
-	if (statement) {
-		return "Si";
-	} else {
-		return "No";
-	}
+	return statement ? "Si" : "No";
 }
 
 //MAIN CODE:
@@ -25,9 +21,7 @@ function newContract() {
 
 	// Pick up validation:
 	let pickUp = false;
-	if (pickUpCheckBox.checked) {
-		pickUp = true;
-	}
+	pickUpCheckBox.checked && (pickUp = true);
 
 	// Form reset:
 	document.querySelector("#form").reset();
