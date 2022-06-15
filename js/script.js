@@ -5,13 +5,11 @@ function stringToNumber(string) {
 	filteredString = filteredString.join("");
 }
 
+// 
+
 function yesNo(statement) {
 	return statement ? "Si" : "No";
 }
-
-//MAIN CODE:
-
-let bill = new Array();
 
 function newContract() {
 	// Getting information from the form:
@@ -48,6 +46,20 @@ function newContract() {
 	table.appendChild(contractLine);
 
 	totalLine.innerHTML = ``;
+	
+	Toastify({
+		text: "¡Contrato agregado con éxito!",
+		duration: 3000,
+		close: true,
+		gravity: "top", // `top` or `bottom`
+		position: "right", // `left`, `center` or `right`
+		stopOnFocus: true, // Prevents dismissing of toast on hover
+		className: "emergentToast",
+		offset: {
+			x: 0, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+			y: '10vh' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+		}
+	}).showToast();
 }
 
 function contractSum() {
@@ -83,7 +95,18 @@ function clearBill() {
 		<tr id="totalBill">
 
 		</tr>`;
+
+	Swal.fire({
+		icon: 'error',
+		title: 'Contratos eliminados',
+		text: 'La factura de contratos está vacía'
+		})
 }
+
+//MAIN CODE:
+
+let bill = new Array();
+
 
 let totalContract = document.querySelector("#contractSum");
 totalContract.addEventListener("click", contractSum);

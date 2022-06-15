@@ -40,12 +40,36 @@ function seekDeleteID(seek, source) {
 
 function deleteSelected() {
 	let selectedElements = document.querySelectorAll("input:checked");
-	for (const element of selectedElements) {
-        seekDeleteID(element.id, staff);
+    let message = `
+        <p>¿Deseas eliminar los siguientes usuarios?</p>
+        <ul>`;
+    for (const element of selectedElements) {
+        message += `<li>${staff.find((employee) => employee.id == element.id).name}</li>`;
     }
-    rechargeTable();
-    localStorage.setItem("staff", JSON.stringify(staff));
+    message += `</ul>`;
+    Swal.fire({
+        title: '¿Estás seguro?',
+        icon: 'warning',
+        html: message,
+        showCancelButton: true,
+        focusConfirm: true,
+        confirmButtonText:
+          'Eliminar',
+        cancelButtonText:
+          'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            for (const element of selectedElements) {
+                seekDeleteID(element.id, staff);
+            }
+            rechargeTable();
+            localStorage.setItem("staff", JSON.stringify(staff));
+            Swal.fire('¡Usuarios eliminados!', '', 'success') 
+        }
+    })
 }
+
+	
 
 rechargeTable();
 
