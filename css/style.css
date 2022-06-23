@@ -144,7 +144,7 @@
   font-weight: 900;
 }
 
-#mainPage .personnel {
+#mainPage .Personnel {
   padding: 3rem;
   display: none;
   -webkit-box-orient: vertical;
@@ -157,19 +157,19 @@
   grid-area: section_;
 }
 
-#mainPage .personnel h2 {
+#mainPage .Personnel h2 {
   text-align: center;
   font-size: 2rem;
 }
 
-#mainPage .personnel button {
+#mainPage .Personnel button {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   width: 10%;
 }
 
-#mainPage .personnel table {
+#mainPage .Personnel table {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -177,47 +177,47 @@
   font-size: 1.25rem;
 }
 
-#mainPage .personnel table .centered {
+#mainPage .Personnel table .centered {
   text-align: center;
 }
 
-#mainPage .personnel table .left-aligned {
+#mainPage .Personnel table .left-aligned {
   text-align: end;
 }
 
-#mainPage .personnel table #tableHeader #Sel {
+#mainPage .Personnel table #tableHeader #Sel {
   width: 30px;
 }
 
-#mainPage .personnel table #tableHeader #Name {
+#mainPage .Personnel table #tableHeader #Name {
   width: 250px;
 }
 
-#mainPage .personnel table #tableHeader #ID {
+#mainPage .Personnel table #tableHeader #ID {
   width: 150px;
 }
 
-#mainPage .personnel table #tableHeader #Role {
+#mainPage .Personnel table #tableHeader #Role {
   width: 150px;
 }
 
-#mainPage .personnel table #tableHeader #State {
+#mainPage .Personnel table #tableHeader #State {
   width: 100px;
 }
 
-#mainPage .personnel table #tableHeader th {
+#mainPage .Personnel table #tableHeader th {
   width: 300px;
   padding: 0.5rem 1rem;
   color: #fff;
   background-color: #2244cc;
 }
 
-#mainPage .personnel table td {
+#mainPage .Personnel table td {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
 }
 
-#mainPage .contracts {
+#mainPage .Contracts {
   display: none;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -228,7 +228,7 @@
           flex-direction: column;
 }
 
-#mainPage .contracts #form {
+#mainPage .Contracts #form {
   margin: 2rem;
   padding: 2rem;
   border-radius: 1.5rem;
@@ -248,7 +248,7 @@
   font-size: 1.5rem;
 }
 
-#mainPage .contracts #form #kindOfVehicle, #mainPage .contracts #form .distance input {
+#mainPage .Contracts #form #kindOfVehicle, #mainPage .Contracts #form .distance input {
   height: 2.5rem;
   padding: 0 1rem;
   font-size: 1.5rem;
@@ -256,7 +256,7 @@
   border-radius: 1.5rem;
 }
 
-#mainPage .contracts #form div {
+#mainPage .Contracts #form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,20 +270,20 @@
   gap: 1rem;
 }
 
-#mainPage .contracts #form .distance {
+#mainPage .Contracts #form .distance {
   font-size: 1.5rem;
 }
 
-#mainPage .contracts #form .distance input {
+#mainPage .Contracts #form .distance input {
   width: 15rem;
 }
 
-#mainPage .contracts #form #pickUp {
+#mainPage .Contracts #form #pickUp {
   height: 1.5rem;
   width: 1.5rem;
 }
 
-#mainPage .contracts #form #submit {
+#mainPage .Contracts #form #submit {
   width: 30%;
   font-size: 1.5rem;
   -ms-flex-item-align: center;
@@ -291,31 +291,31 @@
       align-self: center;
 }
 
-#mainPage .contracts table, #mainPage .contracts tr {
+#mainPage .Contracts table, #mainPage .Contracts tr {
   margin: 2rem auto;
   font-size: 1.5rem;
   border-bottom: 1px solid #000;
   border-collapse: collapse;
 }
 
-#mainPage .contracts table th, #mainPage .contracts table td, #mainPage .contracts tr th, #mainPage .contracts tr td {
+#mainPage .Contracts table th, #mainPage .Contracts table td, #mainPage .Contracts tr th, #mainPage .Contracts tr td {
   padding: 1rem;
 }
 
-#mainPage .contracts table th, #mainPage .contracts tr th {
+#mainPage .Contracts table th, #mainPage .Contracts tr th {
   color: #fff;
   background-color: #2244cc;
 }
 
-#mainPage .contracts table .centered, #mainPage .contracts tr .centered {
+#mainPage .Contracts table .centered, #mainPage .Contracts tr .centered {
   text-align: center;
 }
 
-#mainPage .contracts table .rightAlign, #mainPage .contracts tr .rightAlign {
+#mainPage .Contracts table .rightAlign, #mainPage .Contracts tr .rightAlign {
   text-align: right;
 }
 
-#mainPage .contracts .buttonsSection {
+#mainPage .Contracts .buttonsSection {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,7 +327,7 @@
   gap: 1rem;
 }
 
-#mainPage .contracts #contractSum, #mainPage .contracts #clearBill {
+#mainPage .Contracts #contractSum, #mainPage .Contracts #clearBill {
   height: 2.5rem;
   padding: 0 1rem;
   -ms-flex-item-align: center;
@@ -338,7 +338,7 @@
   border-radius: 1rem;
 }
 
-#mainPage .contracts #clearBill {
+#mainPage .Contracts #clearBill {
   background-color: #d22;
   color: #fff;
 }

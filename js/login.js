@@ -5,7 +5,7 @@ function login() {
     let message = document.querySelector("#loginMessage");
     
     for (const {name, user, id, password} of staff) {
-        if (user == user || id == parseInt(user)) {
+        if (user == user || +id == +user) {
             if (password == pass) {
                 sessionStorage.setItem('user', name);
                 window.location = "/pages/mainPage.html";

@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Test Administrator",
+        "gender": "female",
+        "birthday": [1924, 11, 9],
+        "id": 1234,
+        "email": "randomemail@gmail.com",
+        "phoneNumber": "571-239-6675",
+        "address": "1940 Caracas Street",
+        "user": "test.admin",
+        "password": "1234",
+        "role": "administrator"
+    },
+    {
+        "name": "Charles S Marsh",
+        "gender": "male",
+        "birthday": [1948, 3, 13],
+        "id": 85806007,
+        "email": "brando.terr1@gmail.com",
+        "phoneNumber": "718-354-7224",
+        "address": "4782 Pride Avenue",
+        "user": "charles.marsh",
+        "password": "2ZP&;c6g3s",
+        "role": "administrator"
+    },
+    {
+        "name": "Robert L Brooks",
+        "gender": "male",
+        "birthday": [1992, 8, 2],
+        "id": 94805437,
+        "email": "matt1996@yahoo.com",
+        "phoneNumber": "212-632-3715",
+        "address": "3156 Oakwood Avenue",
+        "user": "robert.brooks",
+        "password": "4}Y*[nEv<s",
+        "role": "agent"
+    },
+    {
+        "name": "Billy J Hudgens",
+        "gender": "male",
+        "birthday": [1980, 1, 3],
+        "id": 107204895,
+        "email": "mariah1993@hotmail.com",
+        "phoneNumber": "646-848-9409",
+        "address": "3594 Forest Avenue",
+        "user": "william.hudgens",
+        "password": "-<V~Mk99*d",
+        "role": "agent"
+    }
+]

@@ -1,31 +1,35 @@
+// User header assignment:
+
 let userMenu = document.querySelector("#userName");
-
 let userName = sessionStorage.getItem("user");
-
 userMenu.innerText = `${userName}`;
 
-let staffTable = document.querySelector(".personnel table");
+let staffTable = document.querySelector(".Personnel table");
+
+let lateralMenu = document.querySelector("nav");
+
+// Function to show the ID separated by commas every third number:
 
 function formattedID(id) { return id.toLocaleString('en-US'); }
 
 function rechargeTable() {
     staffTable.innerHTML = `
     <tr id="tableHeader">
-        <th id="Sel">Sel</th>
-        <th id="Name">Nombre</th>
-        <th id="ID">ID</th>
-        <th id="Role">Rol</th>        
-        <th id="State">Estado</th>
+    <th id="Sel">Sel</th>
+    <th id="Name">Nombre</th>
+    <th id="ID">ID</th>
+    <th id="Role">Rol</th>        
+    <th id="State">Estado</th>
     </tr>`;
 	for (const {name, id, role, state} of staff) {
-		let newEmployee = document.createElement("tr");
+        let newEmployee = document.createElement("tr");
 		newEmployee.id = id;
 		newEmployee.innerHTML = `
-            <td class="centered"><input type="checkbox" name="" id="${id}"></td>
-            <td>${name}</td>
-            <td class="left-aligned">${formattedID(id)}</td>
-            <td class="centered">${role}</td>
-            <td class="centered">${state}</td>`;
+        <td class="centered"><input type="checkbox" name="" id="${id}"></td>
+        <td>${name}</td>
+        <td class="left-aligned">${formattedID(id)}</td>
+        <td class="centered">${role}</td>
+        <td class="centered">${state}</td>`;
 		staffTable.appendChild(newEmployee);
 	}
 }
@@ -39,10 +43,10 @@ function seekDeleteID(seek, source) {
 }
 
 function deleteSelected() {
-	let selectedElements = document.querySelectorAll("input:checked");
+    let selectedElements = document.querySelectorAll("input:checked");
     let message = `
-        <p>¿Deseas eliminar los siguientes usuarios?</p>
-        <ul>`;
+    <p>¿Deseas eliminar los siguientes usuarios?</p>
+    <ul>`;
     for (const element of selectedElements) {
         message += `<li>${staff.find((employee) => employee.id == element.id).name}</li>`;
     }
@@ -54,9 +58,9 @@ function deleteSelected() {
         showCancelButton: true,
         focusConfirm: true,
         confirmButtonText:
-          'Eliminar',
+        'Eliminar',
         cancelButtonText:
-          'Cancelar'
+        'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
             for (const element of selectedElements) {
@@ -69,22 +73,13 @@ function deleteSelected() {
     })
 }
 
-	
+let selectedOption = document.querySelector("section");
+
+lateralMenu.addEventListener("click", (e) => {
+    selectedOption.style.display = "none";
+    let section = `section.${e.target.id}`;
+    selectedOption = document.querySelector(section);
+    selectedOption.style.display = "flex";
+});
 
 rechargeTable();
-
-let personnelSection = document.querySelector(".personnel");
-let contractsSection = document.querySelector(".contracts");
-
-let personnelButton = document.querySelector("#Personnel");
-let contractsButton = document.querySelector("#Contracts");
-
-personnelButton.addEventListener("click", function () {
-    personnelSection.style.display = "flex";
-    contractsSection.style.display = "none";
-})
-
-contractsButton.addEventListener("click", function () {
-    personnelSection.style.display = "none";
-    contractsSection.style.display = "flex";
-})
