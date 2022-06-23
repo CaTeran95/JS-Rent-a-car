@@ -8,7 +8,7 @@ function login() {
         if (user == user || +id == +user) {
             if (password == pass) {
                 sessionStorage.setItem('user', name);
-                window.location = "../pages/mainPage.html";
+                window.location = "./pages/mainPage.html";
             }
         }
     }
