@@ -1,6 +1,6 @@
 let staff = []
 
-fetch('../json/employees.json')
+fetch('../employees.json')
     .then((res) => res.json())
     .then((data) => {
         staff = data;
